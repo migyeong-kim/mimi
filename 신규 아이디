@@ -1,0 +1,12 @@
+import re
+
+def solution(new_id):
+    st = new_id
+    st = st.lower() #소문자로 치환
+    st = re.sub('[^a-z0-9\ -_.]', '', st) #소문자, 숫자, 가능한 특수기호 외 제거
+    st = re.sub('\.+', '.', st) # 연속되는 점을 하나의 점으로 치환
+    st = re.sub('^[.]|[.]$','',st) # 처음과 끝에 위치하는 점을 제거
+    st = 'a' if len(st) == 0 else st[:15] # 빈문자열에 a대입
+    st = re.sub('^[.]|[.}$', '', st)    #15자 초과 문자 제거후 점이 마지막에 올 경우, 제거
+    st = st if len(st) > 2 else st + "".join([st[-1] for i in range (3-len(st))]) 
+    return st

@@ -2,3 +2,13 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/42889
 
 dfdfdfdf
+<git 완전 처음>
+git init
+git add .
+git commit -m "설명"
+-> github들어가서 repository 새로만들고 두번째 코드 복사
+
+<만들어진 git>
+git add .
+git commit -m "설명"
+git push origin main
